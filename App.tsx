@@ -9,106 +9,106 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const Section: React.FC<{
-  title: string;
-}> = ({children, title}) => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
+import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
+    <SafeAreaView style={styles.safeContainer}>
+      <Text style={[styles.text, styles.workSans_light]}>
+        WorkSans-Light Text text text text
+      </Text>
+
+      <Text style={[styles.text, styles.workSans_regular]}>
+        WorkSans-Regular Text text text text
+      </Text>
+
+      <Text style={[styles.text, styles.workSans_medium]}>
+        WorkSans-Medium Text text text text
+      </Text>
+
+      <Text style={[styles.text, styles.workSans_semiBold]}>
+        WorkSans-SemiBold Text text text text
+      </Text>
+
+      <Text style={[styles.text, styles.workSans_bold]}>
+        WorkSans-Bold Text text text text
+      </Text>
+
+      <Text style={[styles.text, styles.workSans_black]}>
+        WorkSans-Black Text text text text
+      </Text>
+
+      <View style={styles.division} />
+
+      <Text style={[styles.text, styles.kintoSans_light]}>
+        KintoSans-Light てきすと　テキスト
+      </Text>
+
+      <Text style={[styles.text, styles.kintoSans_regular]}>
+        KintoSans-Regular てきすと　テキスト
+      </Text>
+
+      <Text style={[styles.text, styles.kintoSans_medium]}>
+        KintoSans-Medium てきすと　テキスト
+      </Text>
+
+      <Text style={[styles.text, styles.kintoSans_bold]}>
+        KintoSans-Bold てきすと　テキスト
+      </Text>
+
+      <Text style={[styles.text, styles.kintoSans_black]}>
+        KintoSans-Black てきすと　テキスト text
+      </Text>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  safeContainer: {
+    flex: 1,
+    marginLeft: 8,
+    marginRight: 8,
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+  division: {
+    height: 40,
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
+  text: {
+    color: 'rgba(0, 0, 0, 0.87)',
+    fontSize: 16,
+    paddingTop: 4,
   },
-  highlight: {
-    fontWeight: '700',
+  workSans_light: {
+    fontFamily: 'WorkSans-Light',
+  },
+  workSans_regular: {
+    fontFamily: 'WorkSans-Regular',
+  },
+  workSans_medium: {
+    fontFamily: 'WorkSans-Medium',
+  },
+  workSans_semiBold: {
+    fontFamily: 'WorkSans-SemiBold',
+  },
+  workSans_bold: {
+    fontFamily: 'WorkSans-Bold',
+  },
+  workSans_black: {
+    fontFamily: 'WorkSans-Black',
+  },
+  kintoSans_light: {
+    fontFamily: 'KintoSans-Light',
+  },
+  kintoSans_regular: {
+    fontFamily: 'KintoSans-Regular',
+  },
+  kintoSans_medium: {
+    fontFamily: 'KintoSans-Medium',
+  },
+  kintoSans_bold: {
+    fontFamily: 'KintoSans-Bold',
+  },
+  kintoSans_black: {
+    fontFamily: 'KintoSans-Bold',
   },
 });
 
